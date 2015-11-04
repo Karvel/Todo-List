@@ -1,0 +1,12 @@
+{% extends "todo/base.html" %}
+
+{% block content %}
+    {% for todo_items in todo_items %}
+        <div class="todo">
+        <div class="date">
+            <p>created: {{ todo_items.created_date }}</p>
+            </div>
+            <p>{{ todo_items.text|linebreaks }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
