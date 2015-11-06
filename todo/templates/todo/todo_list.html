@@ -7,6 +7,8 @@
             <p>created: {{ todo_items.created_date }}</p>
             </div>
             <p>{{ todo_items.text|linebreaks }}</p>
+            <a class="btn btn-default" href="{% url 'add_item_to_list' pk=todo_items.pk %}">Add item</a>
+            <a class="btn btn-default" href="{% url 'item_remove' pk=todo_items.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         </div>
     {% endfor %}
 {% endblock %}

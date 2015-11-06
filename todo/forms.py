@@ -6,4 +6,4 @@ class TodoForm(forms.ModelForm):
 
     class Meta:
         model = TodoList
-        field = ('text',)
+        fields = ('text',)
