@@ -7,6 +7,7 @@ class TodoList(models.Model):
     created_date = models.DateTimeField(
             default=timezone.now)
     approved_todo_item = models.BooleanField(default=False)
+    completed = models.BooleanField(default = False)
 
     def publish(self):
         self.approved_todo_item = True

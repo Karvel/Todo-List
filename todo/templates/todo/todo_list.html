@@ -4,11 +4,12 @@
     {% for todo_items in todo_items %}
         <div class="todo">
         <div class="date">
-            <p>created: {{ todo_items.created_date }}</p>
+            <p>created: {{ todo_items.created_date }} <input type="checkbox" name="completed" id="id_completed" /> {{ todo_items.completed }}
+            <a class="btn btn-default" href="{% url "item_remove" pk=todo_items.pk %}"><span class="glyphicon glyphicon-remove"></span></a></p>
             </div>
             <p>{{ todo_items.text|linebreaks }}</p>
-            <a class="btn btn-default" href="{% url 'add_item_to_list' pk=todo_items.pk %}">Add item</a>
-            <a class="btn btn-default" href="{% url 'item_remove' pk=todo_items.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         </div>
+        {% empty %}
+        <p>Empty todo list!</p>
     {% endfor %}
 {% endblock %}
