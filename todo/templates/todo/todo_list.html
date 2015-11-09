@@ -1,13 +1,18 @@
 {% extends "todo/base.html" %}
 
 {% block content %}
-    {% for todo_items in todo_items %}
+    {% for new_item in new_item %}
         <div class="todo">
-        <div class="date">
-            <p>created: {{ todo_items.created_date }} <input type="checkbox" name="completed" id="id_completed" /> {{ todo_items.completed }}
-            <a class="btn btn-default" href="{% url "item_remove" pk=todo_items.pk %}"><span class="glyphicon glyphicon-remove"></span></a></p>
+            {% if new_item.completed %}
+                    <h1>{{ new_item.text|linebreaks }}</h1>
+            {% else %}
+                <div class="complete">
+                    <h1>{{ new_item.text|linebreaks }}</h1>
+                </div>
+            {% endif %}
+            <div class="date">
+                created: {{ new_item.created_date }}  <a class="btn btn-default" href="{% url "item_detail" pk=new_item.pk %}"><span class="glyphicon glyphicon-edit"></span></a>
             </div>
-            <p>{{ todo_items.text|linebreaks }}</p>
         </div>
         {% empty %}
         <p>Empty todo list!</p>
