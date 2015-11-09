@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils import timezone
 
-
 class TodoList(models.Model):
     text = models.CharField(max_length=200)
     created_date = models.DateTimeField(

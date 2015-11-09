@@ -2,19 +2,20 @@
 
 {% block content %}
     {% for new_item in new_item %}
-        <div class="todo">
+        <div>
+            <div class="date">
+                created: {{ new_item.created_date }}  
+                <a class="btn btn-default" href="{% url "item_detail" pk=new_item.pk %}"><span class="glyphicon glyphicon-edit"></span></a>
+            </div>
             {% if new_item.completed %}
-                    <h1>{{ new_item.text|linebreaks }}</h1>
+                <h1>{{ new_item.text|linebreaks }}</h1>
             {% else %}
                 <div class="complete">
                     <h1>{{ new_item.text|linebreaks }}</h1>
                 </div>
             {% endif %}
-            <div class="date">
-                created: {{ new_item.created_date }}  <a class="btn btn-default" href="{% url "item_detail" pk=new_item.pk %}"><span class="glyphicon glyphicon-edit"></span></a>
-            </div>
         </div>
         {% empty %}
-        <p>Empty todo list!</p>
+            <p>Empty todo list!</p>
     {% endfor %}
 {% endblock %}

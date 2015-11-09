@@ -1,9 +1,9 @@
 {% extends "todo/base.html" %}
 
 {% block content %}
-    <div class="todo">
+    <div>
         <div class="date">
-                {{ todo_item.created_date }}
+            {{ todo_item.created_date }}
         </div>
         <a class="btn btn-default" href="{% url "item_edit" pk=todo_item.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
         <a class="btn btn-default" href="{% url "item_remove" pk=todo_item.pk %}"><span class="glyphicon glyphicon-remove"></span></a>

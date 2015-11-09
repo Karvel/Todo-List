@@ -6,8 +6,9 @@
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #5A8C56;
-    font-size: 16pt;
+    font-size: 24pt;
     text-decoration: none;
+    text-align: center;
 }
 
 .content {
@@ -35,12 +36,9 @@ h1 {
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #ffffff;
     float: right;
-    font-size: 26pt;
-    margin-right: 20px;
-}
-
-.todo {
-    margin-bottom: 70px;
+    font-size: 24pt;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
 }
 
 .todo h1 a, .todo h1 a:visited {
